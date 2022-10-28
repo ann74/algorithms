@@ -15,8 +15,9 @@ class Int(int):
                     try:
                         other = float(other)
                         return self.__int__() + other
-                    except:
-                        raise TypeError('справа от знака "+" непонятный текст. Если что, я понимаю текстом цифры с 0 по 5.')
+                    except ValueError:
+                        pass
+                    raise TypeError('справа от знака "+" непонятный текст. Если что, я понимаю текстом цифры с 0 по 5.')
         return super().__add__(other)
 
 
